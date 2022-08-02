@@ -18,9 +18,26 @@ var jsonResponse = client.GetStringAsync(openWeatherMap).Result;
 
 var openWeatherObject = JObject.Parse(jsonResponse);
 
-Console.WriteLine(openWeatherObject);
+
+double inputCityFeelsLike = double.Parse(openWeatherObject["main"]["feels_like"].ToString());
+
+double newFeelsLike = 1.8 * (inputCityFeelsLike - 273) + 32;
+
+string zipcodeCityName = openWeatherObject["name"].ToString();
+
+string weatherDescription = openWeatherObject["weather"].First["description"].ToString();
 
 
-double inputCity = double.Parse(openWeatherObject["main"]["feels_like"].ToString());
 
-Console.WriteLine(inputCity); 
+// temp conversion equation (kelvin to F) = 1.8 * (K - 273) + 32  //
+
+double tempChange = double.Parse(openWeatherObject["main"]["temp"].ToString());
+
+double newTempToFahrenheit = 1.8 * (tempChange - 273) + 32;
+
+
+Console.WriteLine($"YOUR CITY IS:{zipcodeCityName}");
+Console.WriteLine($"YOUR TEMPATURE IS: {Math.Round(newTempToFahrenheit,2)}ºF");
+Console.WriteLine($"BUT FEELS LIKE: {Math.Round(newFeelsLike,2)}ºF");
+Console.WriteLine($"DESCRIPTION: {weatherDescription}");
+
