@@ -36,8 +36,8 @@ double tempChange = double.Parse(openWeatherObject["main"]["temp"].ToString());
 double newTempToFahrenheit = 1.8 * (tempChange - 273) + 32;
 
 
-Console.WriteLine($"YOUR CITY IS:{zipcodeCityName}");
-Console.WriteLine($"YOUR TEMPATURE IS: {Math.Round(newTempToFahrenheit,2)}ºF");
-Console.WriteLine($"BUT FEELS LIKE: {Math.Round(newFeelsLike,2)}ºF");
-Console.WriteLine($"DESCRIPTION: {weatherDescription}");
+Console.WriteLine($"You searched for: {zipcodeCityName}");
+Console.WriteLine($"Your temperature is: {Math.Round(newTempToFahrenheit,2)}ºF");
+Console.WriteLine($"{zipcodeCityName} feels like: {Math.Round(newFeelsLike,2)}ºF");
+Console.WriteLine($"Weather description: {weatherDescription}");
 
