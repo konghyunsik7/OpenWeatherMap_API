@@ -1,6 +1,6 @@
 <h1>☁️🌞 Open Weather Map - API & JSon 🌡️</h1>
 <h2>Find out your current weather forecast!</h2>
-I created a Microsoft .Net 6.0 console application that calls the OpenWeatherMap API to check the current weather forecast by entering any zipcode! Here are the steps I took below to make this weather application happen:
+I created a Microsoft .Net 6.0 console application that calls the OpenWeatherMap API to check the current weather forecast by entering any zipcode! 
 
 I created an OpenWeatherMap account to get a free API Key
 Add the NewtonSoft.Json Nuget Package to my Console App
